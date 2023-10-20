@@ -26,6 +26,8 @@ if(NOT raylib_FOUND) # If there's none, fetch and build raylib
   endif()
 endif()
 
-add_executable(${PROJECT_NAME} main.cpp)
+add_executable(${PROJECT_NAME} main.cpp
+    food.hpp food.cpp
+    colors.hpp colors.cpp)
 
 target_link_libraries(${PROJECT_NAME} raylib)
