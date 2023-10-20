@@ -6,8 +6,11 @@ class Food
 {
 public:
     Food();
-    Vector2 position = {5, 6};
+    ~Food();
 
     void draw(int cellSize);
+private:
+    Vector2 position;
+    Texture2D texture;
 };
 

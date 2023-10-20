@@ -31,7 +31,7 @@ add_executable(${PROJECT_NAME} main.cpp
     colors.hpp colors.cpp)
 
 set(RESOURCE_FILES
-    "resources/graphics/food.png"
+    "/resources/graphics/food.png"
 )
 
 foreach(RESOURCE ${RESOURCE_FILES})
