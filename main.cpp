@@ -2,13 +2,11 @@
 
 #include "colors.hpp"
 #include "food.hpp"
-
-const auto CELLSIZE = 30;
-const auto CELLCOUNT = 25;
+#include "grid.hpp"
 
 int main()
 {
-    InitWindow(CELLSIZE * CELLCOUNT, CELLSIZE * CELLCOUNT, "Retro Snake");
+    InitWindow(CELL_SIZE * CELL_COUNT, CELL_SIZE * CELL_COUNT, "Retro Snake");
     SetTargetFPS(60);
 
     auto food = Food();
@@ -18,7 +16,7 @@ int main()
 
         ClearBackground(MY_GREEN);
 
-        food.draw(CELLSIZE);
+        food.draw();
 
         EndDrawing();
     }
