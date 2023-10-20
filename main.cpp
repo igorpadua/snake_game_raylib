@@ -6,6 +6,8 @@
 #include "grid.hpp"
 #include "snake.hpp"
 
+auto eventTriggered(double interval) -> bool;
+
 int main()
 {
     InitWindow(CELL_SIZE * CELL_COUNT, CELL_SIZE * CELL_COUNT, "Retro Snake");
@@ -14,8 +16,13 @@ int main()
     auto food = std::unique_ptr<Food>(new Food());
     auto snake = std::unique_ptr<Snake>(new Snake());
 
-    while (WindowShouldClose() == false) {
+    while (!WindowShouldClose()) {
         BeginDrawing();
+
+        snake->move();
+        if (eventTriggered(0.2)) {
+            snake->update();
+        }
 
         ClearBackground(MY_GREEN);
 
@@ -27,4 +34,14 @@ int main()
 
     CloseWindow();
     return 0;
+}
+
+auto eventTriggered(double interval) -> bool {
+    auto currentTime = GetTime();
+
+    if (currentTime - lastUpdateTime >= interval) {
+        lastUpdateTime = currentTime;
+        return true;
+    }
+    return false;
 }
