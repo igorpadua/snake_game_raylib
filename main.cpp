@@ -19,10 +19,11 @@ int main()
     while (!WindowShouldClose()) {
         BeginDrawing();
 
-        snake->move();
         if (eventTriggered(0.2)) {
             snake->update();
         }
+
+        snake->move();
 
         ClearBackground(MY_GREEN);
 

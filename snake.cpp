@@ -41,6 +41,7 @@ auto Snake::move() -> void
         if (direction.y != -1) {
             direction = Vector2{0, 1};
         }
+        break;
     case KEY_LEFT:
         if (direction.x != 1) {
             direction = Vector2{-1, 0};

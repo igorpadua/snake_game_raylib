@@ -11,9 +11,9 @@ public:
     auto draw() -> void;
     auto update() -> void;
     auto move() -> void;
+    Vector2 direction;
 
 private:
     std::deque<Vector2> body;
-    Vector2 direction;
 };
 
