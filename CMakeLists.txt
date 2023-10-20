@@ -30,4 +30,12 @@ add_executable(${PROJECT_NAME} main.cpp
     food.hpp food.cpp
     colors.hpp colors.cpp)
 
+set(RESOURCE_FILES
+    "resources/graphics/food.png"
+)
+
+foreach(RESOURCE ${RESOURCE_FILES})
+    configure_file(${CMAKE_SOURCE_DIR}/${RESOURCE} ${CMAKE_BINARY_DIR}/${RESOURCE} COPYONLY)
+endforeach()
+
 target_link_libraries(${PROJECT_NAME} raylib)
