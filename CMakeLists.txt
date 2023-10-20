@@ -29,7 +29,8 @@ endif()
 add_executable(${PROJECT_NAME} main.cpp
     food.hpp food.cpp
     colors.hpp colors.cpp
-    grid.hpp grid.cpp)
+    grid.hpp grid.cpp
+    snake.hpp snake.cpp)
 
 set(RESOURCE_FILES
     "/resources/graphics/food.png"
