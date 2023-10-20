@@ -1,8 +1,8 @@
 #include "food.hpp"
-#include "colors.hpp"
+#include "grid.hpp"
 
 Food::Food()
-    : position({5, 6})
+    : position(generateRandomPos())
 {
     Image image = LoadImage("resources/graphics/food.png");
     texture = LoadTextureFromImage(image);
@@ -14,7 +14,14 @@ Food::~Food()
     UnloadTexture(texture);
 }
 
-void Food::draw(int cellSize)
+auto Food::draw() -> void
 {
-    DrawTexture(texture, position.x * cellSize, position.y * cellSize, WHITE);
+    DrawTexture(texture, position.x * CELL_SIZE, position.y * CELL_SIZE, WHITE);
+}
+
+auto Food::generateRandomPos() -> Vector2
+{
+    auto x = static_cast<float>(GetRandomValue(0, CELL_COUNT - 1));
+    auto y =  static_cast<float>(GetRandomValue(0, CELL_COUNT - 1));
+    return Vector2{x, y};
 }

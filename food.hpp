@@ -8,7 +8,8 @@ public:
     Food();
     ~Food();
 
-    void draw(int cellSize);
+    auto draw() -> void;
+    auto generateRandomPos() -> Vector2;
 private:
     Vector2 position;
     Texture2D texture;
