@@ -1,17 +1,19 @@
 #include <raylib.h>
 
-Color green = {173, 204, 96, 255};
-Color darkGreen = {43, 51, 24, 255};
+#include "colors.hpp"
+
+const auto CELLSIZE = 30;
+const auto CELLCOUNT = 25;
 
 int main()
 {
-    InitWindow(750, 750, "Retro Snake");
+    InitWindow(CELLSIZE * CELLCOUNT, CELLSIZE * CELLCOUNT, "Retro Snake");
     SetTargetFPS(60);
 
     while (WindowShouldClose() == false) {
         BeginDrawing();
 
-        ClearBackground(darkGreen);
+        ClearBackground(MY_GREEN);
 
         EndDrawing();
     }
