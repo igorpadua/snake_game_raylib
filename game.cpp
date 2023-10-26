@@ -27,6 +27,7 @@ auto Game::update() -> void
     snake.update();
     checkCollisionWithFood();
     checkCollisionWithEdges();
+    checkCollisionWithTail();
 
 }
 
@@ -96,5 +97,15 @@ void Game::snake_move()
             running = true;
         }
         break;
+    }
+}
+
+auto Game::checkCollisionWithTail() -> void
+{
+    auto headLessBody = snake.getBody();
+    headLessBody.pop_front();
+
+    if (elementInDeque(snake.getBody()[0], headLessBody)) {
+        gameOver();
     }
 }

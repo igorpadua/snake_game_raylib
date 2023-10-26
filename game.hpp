@@ -19,6 +19,7 @@ public:
     auto checkCollisionWithEdges() ->void;
     auto gameOver() -> void;
     auto snake_move() -> void;
+    auto checkCollisionWithTail() -> void;
 
     Snake snake;
 
