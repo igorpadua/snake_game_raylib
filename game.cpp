@@ -10,6 +10,7 @@ Game::Game()
     : snake(Snake())
     , food(Food(snake.getBody()))
     , running(true)
+    , score(0)
 {
 }
 
