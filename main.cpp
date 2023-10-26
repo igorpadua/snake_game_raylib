@@ -3,6 +3,7 @@
 
 #include "colors.hpp"
 #include "food.hpp"
+#include "game.hpp"
 #include "grid.hpp"
 #include "snake.hpp"
 
@@ -13,22 +14,20 @@ int main()
     InitWindow(CELL_SIZE * CELL_COUNT, CELL_SIZE * CELL_COUNT, "Retro Snake");
     SetTargetFPS(60);
 
-    auto food = std::unique_ptr<Food>(new Food());
-    auto snake = std::unique_ptr<Snake>(new Snake());
+    Game game = Game();
 
     while (!WindowShouldClose()) {
         BeginDrawing();
 
         if (eventTriggered(0.2)) {
-            snake->update();
+            game.update();
         }
 
-        snake->move();
+        game.snake.move();
 
         ClearBackground(MY_GREEN);
 
-        food->draw();
-        snake->draw();
+        game.draw();
 
         EndDrawing();
     }
