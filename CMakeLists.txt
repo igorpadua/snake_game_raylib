@@ -26,11 +26,11 @@ if(NOT raylib_FOUND) # If there's none, fetch and build raylib
   endif()
 endif()
 
-add_executable(${PROJECT_NAME} main.cpp
-    food.hpp food.cpp
-    colors.hpp colors.cpp
-    snake.hpp snake.cpp
-    game.hpp game.cpp)
+add_executable(${PROJECT_NAME} src/main.cpp
+    src/food.hpp src/food.cpp
+    src/colors.hpp src/colors.cpp
+    src/snake.hpp src/snake.cpp
+    src/game.hpp src/game.cpp)
 
 set(RESOURCE_FILES
     "/resources/graphics/food.png"
