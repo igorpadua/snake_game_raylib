@@ -10,8 +10,8 @@ public:
 
     auto draw() -> void;
     auto update() -> void;
-    auto move() -> void;
     std::deque<Vector2> getBody() const;
+    auto reset() -> void;
 
     Vector2 direction;
     bool addSegment;

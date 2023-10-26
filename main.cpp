@@ -20,7 +20,7 @@ int main()
             game.update();
         }
 
-        game.snake.move();
+        game.snake_move();
 
         ClearBackground(MY_GREEN);
 

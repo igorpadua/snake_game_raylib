@@ -16,10 +16,14 @@ public:
     auto update() ->void;
     auto checkCollisionWithFood() -> void;
     static auto elementInDeque(Vector2 element, std::deque<Vector2> deque) -> bool;
+    auto checkCollisionWithEdges() ->void;
+    auto gameOver() -> void;
+    auto snake_move() -> void;
 
     Snake snake;
 
 private:
     Food food;
+    bool running;
 };
 

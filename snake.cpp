@@ -33,35 +33,13 @@ auto Snake::update() -> void
     body.pop_back();
 }
 
-auto Snake::move() -> void
-{
-    auto key = GetKeyPressed();
-
-    switch (key) {
-    case KEY_UP:
-        if (direction.y != 1) {
-            direction = Vector2{0, -1};
-        }
-        break;
-    case KEY_DOWN:
-        if (direction.y != -1) {
-            direction = Vector2{0, 1};
-        }
-        break;
-    case KEY_LEFT:
-        if (direction.x != 1) {
-            direction = Vector2{-1, 0};
-        }
-        break;
-    case KEY_RIGHT:
-        if (direction.x != -1) {
-            direction = Vector2{1, 0};
-        }
-        break;
-    }
-}
-
 std::deque<Vector2> Snake::getBody() const
 {
     return body;
+}
+
+void Snake::reset()
+{
+    body = {Vector2{6, 9}, Vector2{5, 9}, Vector2{4 , 9}};
+    direction = {1, 0};
 }
