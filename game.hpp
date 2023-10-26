@@ -22,6 +22,7 @@ public:
     auto snake_move() -> void;
     auto checkCollisionWithTail() -> void;
 
+    int score;
     Snake snake;
 
 private:

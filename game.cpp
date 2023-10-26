@@ -37,6 +37,7 @@ auto Game::checkCollisionWithFood() -> void
     if (Vector2Equals(snake.getBody()[0], food.getPosition())) {
         food.setPosition(food.generateRandomPos(snake.getBody()));
         snake.addSegment = true;
+        ++score;
     }
 }
 
@@ -67,6 +68,7 @@ auto Game::gameOver() -> void
     snake.reset();
     food.setPosition(food.generateRandomPos(snake.getBody()));
     running = false;
+    score = 0;
 }
 
 void Game::snake_move()

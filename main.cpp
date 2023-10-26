@@ -24,6 +24,7 @@ int main()
         ClearBackground(MY_GREEN);
         DrawRectangleLinesEx(Rectangle{static_cast<float>(OFFSET - 5), static_cast<float>(OFFSET - 5), static_cast<float>(CELL_SIZE * CELL_COUNT + 10), static_cast<float>(CELL_SIZE * CELL_COUNT + 10)}, 5, MY_DARK_GREEN);
         DrawText("Retro Snake", OFFSET - 5, 20 ,40, MY_DARK_GREEN);
+        DrawText(TextFormat("%i", game.score), OFFSET - 5, OFFSET + CELL_SIZE * CELL_COUNT + 10, 40, MY_DARK_GREEN);
         game.draw();
 
         EndDrawing();
