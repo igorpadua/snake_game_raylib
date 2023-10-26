@@ -12,6 +12,7 @@ class Game
 {
 public:
     Game();
+    ~Game();
 
     auto draw() -> void;
     auto update() ->void;
@@ -26,6 +27,8 @@ public:
     Snake snake;
 
 private:
+    Sound eatSound;
+    Sound wallSound;
     Food food;
     bool running;
 };

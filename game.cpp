@@ -12,6 +12,16 @@ Game::Game()
     , running(true)
     , score(0)
 {
+    InitAudioDevice();
+    eatSound = LoadSound("resources/sounds/eat.mp3");
+    wallSound = LoadSound("resources/sounds/wall.mp3");
+}
+
+Game::~Game()
+{
+    UnloadSound(eatSound);
+    UnloadSound(wallSound);
+    CloseAudioDevice();
 }
 
 auto Game::draw() -> void
@@ -38,6 +48,7 @@ auto Game::checkCollisionWithFood() -> void
         food.setPosition(food.generateRandomPos(snake.getBody()));
         snake.addSegment = true;
         ++score;
+        PlaySound(eatSound);
     }
 }
 
@@ -69,6 +80,7 @@ auto Game::gameOver() -> void
     food.setPosition(food.generateRandomPos(snake.getBody()));
     running = false;
     score = 0;
+    PlaySound(wallSound);
 }
 
 void Game::snake_move()
