@@ -30,6 +30,7 @@ auto Game::checkCollisionWithFood() -> void
 {
     if (Vector2Equals(snake.getBody()[0], food.getPosition())) {
         food.setPosition(food.generateRandomPos(snake.getBody()));
+        snake.addSegment = true;
     }
 }
 

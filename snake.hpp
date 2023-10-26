@@ -11,9 +11,10 @@ public:
     auto draw() -> void;
     auto update() -> void;
     auto move() -> void;
-    Vector2 direction;
-
     std::deque<Vector2> getBody() const;
+
+    Vector2 direction;
+    bool addSegment;
 
 private:
     std::deque<Vector2> body;

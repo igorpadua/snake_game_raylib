@@ -7,6 +7,7 @@
 Snake::Snake()
     : body({Vector2{6, 9}, Vector2{5, 9}, Vector2{4 , 9}})
     , direction{1, 0}
+    , addSegment{false}
 {
 
 }
@@ -23,8 +24,13 @@ auto Snake::draw() -> void
 
 auto Snake::update() -> void
 {
-    body.pop_back();
     body.push_front(Vector2Add(body[0], direction));
+    if (addSegment) {
+        addSegment = false;
+        return;
+    }
+
+    body.pop_back();
 }
 
 auto Snake::move() -> void
