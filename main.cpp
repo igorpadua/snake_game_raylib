@@ -2,7 +2,6 @@
 
 #include "colors.hpp"
 #include "game.hpp"
-#include "grid.hpp"
 #include "snake.hpp"
 
 auto eventTriggered(double interval) -> bool;

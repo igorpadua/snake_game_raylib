@@ -1,5 +1,5 @@
 #include "food.hpp"
-#include "grid.hpp"
+#include "game.hpp"
 
 Food::Food(std::deque<Vector2> snakeBody)
     : position(generateRandomPos(snakeBody))
@@ -23,7 +23,7 @@ auto Food::generateRandomPos(std::deque<Vector2> snakebody) -> Vector2
 {
     auto position = generateRadomCell();
 
-    while (elementInDeque(position, snakebody)) {
+    while (Game::elementInDeque(position, snakebody)) {
         position = generateRadomCell();
     }
 

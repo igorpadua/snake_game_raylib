@@ -29,7 +29,7 @@ endif()
 add_executable(${PROJECT_NAME} main.cpp
     food.hpp food.cpp
     colors.hpp colors.cpp
-    grid.hpp grid.cpp
+
     snake.hpp snake.cpp
     game.hpp game.cpp)
 

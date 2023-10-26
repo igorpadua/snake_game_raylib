@@ -1,6 +1,6 @@
 #include "snake.hpp"
 #include "colors.hpp"
-#include "grid.hpp"
+#include "game.hpp"
 
 #include <raymath.h>
 
