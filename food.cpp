@@ -16,7 +16,7 @@ Food::~Food()
 
 auto Food::draw() -> void
 {
-    DrawTexture(texture, position.x * CELL_SIZE, position.y * CELL_SIZE, WHITE);
+    DrawTexture(texture, OFFSET + position.x * CELL_SIZE, OFFSET + position.y * CELL_SIZE, WHITE);
 }
 
 auto Food::generateRandomPos(std::deque<Vector2> snakebody) -> Vector2

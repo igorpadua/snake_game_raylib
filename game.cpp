@@ -4,7 +4,7 @@
 const int CELL_SIZE = 30;
 const int CELL_COUNT = 25;
 double lastUpdateTime = 0;
-
+const int OFFSET = 75;
 
 Game::Game()
     : snake(Snake())

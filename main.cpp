@@ -2,13 +2,12 @@
 
 #include "colors.hpp"
 #include "game.hpp"
-#include "snake.hpp"
 
 auto eventTriggered(double interval) -> bool;
 
 int main()
 {
-    InitWindow(CELL_SIZE * CELL_COUNT, CELL_SIZE * CELL_COUNT, "Retro Snake");
+    InitWindow(2 * OFFSET + CELL_SIZE * CELL_COUNT, 2 * OFFSET + CELL_SIZE * CELL_COUNT, "Retro Snake");
     SetTargetFPS(60);
 
     Game game = Game();
@@ -23,7 +22,7 @@ int main()
         game.snake_move();
 
         ClearBackground(MY_GREEN);
-
+        DrawRectangleLinesEx(Rectangle{static_cast<float>(OFFSET - 5), static_cast<float>(OFFSET - 5), static_cast<float>(CELL_SIZE * CELL_COUNT + 10), static_cast<float>(CELL_SIZE * CELL_COUNT + 10)}, 5, MY_DARK_GREEN);
         game.draw();
 
         EndDrawing();
