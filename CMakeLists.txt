@@ -29,12 +29,13 @@ endif()
 add_executable(${PROJECT_NAME} main.cpp
     food.hpp food.cpp
     colors.hpp colors.cpp
-
     snake.hpp snake.cpp
     game.hpp game.cpp)
 
 set(RESOURCE_FILES
     "/resources/graphics/food.png"
+    "resources/sounds/eat.mp3"
+    "resources/sounds/wall.mp3"
 )
 
 foreach(RESOURCE ${RESOURCE_FILES})
