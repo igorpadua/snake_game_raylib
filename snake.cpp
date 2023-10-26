@@ -54,3 +54,8 @@ auto Snake::move() -> void
         break;
     }
 }
+
+std::deque<Vector2> Snake::getBody() const
+{
+    return body;
+}

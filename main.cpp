@@ -1,8 +1,6 @@
-#include <memory>
 #include <raylib.h>
 
 #include "colors.hpp"
-#include "food.hpp"
 #include "game.hpp"
 #include "grid.hpp"
 #include "snake.hpp"

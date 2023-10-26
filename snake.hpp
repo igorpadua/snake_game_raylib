@@ -13,6 +13,8 @@ public:
     auto move() -> void;
     Vector2 direction;
 
+    std::deque<Vector2> getBody() const;
+
 private:
     std::deque<Vector2> body;
 };
